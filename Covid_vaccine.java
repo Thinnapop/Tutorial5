@@ -73,16 +73,16 @@ class LinkedList {
         if (head == null) {
             System.out.println("List is empty");
         } else {
-            head = head.next;  // Remove the first element in the list
+            head = head.next;  
         }
     }
 
     public void deleteAll() {
-        head = null;  // Clear the entire list
+        head = null;  
     }
 
     public boolean isEmpty() {
-        return head == null;  // If head is null, the list is empty
+        return head == null;  
     }
 
     public int getSize() {
@@ -108,7 +108,7 @@ class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
-        // Create and insert 10 applicants with specific vaccines
+       
         Vector<String> vaccines1 = new Vector<>();
         vaccines1.add("Cinovex ->");
         Vector<String> vaccines2 = new Vector<>();
@@ -140,12 +140,12 @@ class Main {
         System.out.println("List of applicants after adding 4 specific vaccines:");
         list.traverse();
 
-        // Randomly delete two applicants from the list
+        
         Random rand = new Random();
         int deleteCount = 0;
 
         while (deleteCount < 2) {
-            int positionToDelete = rand.nextInt(10); // Random position to delete
+            int positionToDelete = rand.nextInt(10); 
             Node temp = list.head;
             Node prev = null;
 
@@ -156,22 +156,22 @@ class Main {
 
             if (temp != null) {
                 if (prev != null) {
-                    prev.next = temp.next;  // Remove the node
+                    prev.next = temp.next; 
                 } else {
-                    list.head = temp.next;  // Removing the head
+                    list.head = temp.next;  
                 }
                 System.out.println("Deleted applicant at position: " + positionToDelete);
                 deleteCount++;
             }
         }
 
-        // Print the list after deleting two applicants
+        
         System.out.println("\nList after randomly deleting two applicants:");
         list.traverse();
 
-        // Delete all applicants from the list
+       
         list.deleteAll();
         System.out.println("\nAfter deleting all applicants:");
-        list.traverse();  // This will show an empty list
+        list.traverse();  
     }
 }
